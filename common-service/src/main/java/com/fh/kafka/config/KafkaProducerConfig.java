@@ -14,8 +14,8 @@ import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
 
-@Configuration
-@EnableKafka
+//@Configuration
+//@EnableKafka
 public class KafkaProducerConfig {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(KafkaProducerConfig.class);

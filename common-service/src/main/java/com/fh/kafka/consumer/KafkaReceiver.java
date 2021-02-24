@@ -13,10 +13,10 @@ public class KafkaReceiver {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(KafkaReceiver.class);
 
-    @Resource
+//    @Resource
     private KafkaProperties kafkaProperties;
 
-    @KafkaListener(topics = "test")
+//    @KafkaListener(topics = "test")
     public void receive(String msg) {
         LOGGER.info("【消费者消费消息】{}", msg);
     }
