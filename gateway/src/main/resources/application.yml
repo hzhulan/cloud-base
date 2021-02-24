@@ -13,7 +13,9 @@ spring:
         - id: common-service
           uri: lb://COMMON-SERVICE
           predicates:
-            - Path=/payment/get/**
+            - Path=/common-service/**
+          filters:
+            - StripPrefix=1
 eureka:
   instance:
     instance-id: cloud-gateway-service
