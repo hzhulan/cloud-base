@@ -10,7 +10,7 @@ public class FeignPaymentFallbackService implements FeignPaymentService {
     }
 
     @Override
-    public String timeOut(Integer id) {
+    public String timeout(Integer id) {
         return "timeout调用异常，/(ㄒoㄒ)/~~";
     }
 }
