@@ -41,4 +41,10 @@ public class PaymentController {
         }
         return "调用慢接口成功";
     }
+
+    @RequestMapping("/zipkin")
+    public String paymentZipkin() {
+        return "this is zipkin";
+    }
+
 }
