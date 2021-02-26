@@ -12,6 +12,10 @@ public class SendMessageController {
     @Resource
     private IMessageProvider messageProvider;
 
+    /**
+     * kafka对接有小问题，为对接完成
+     * @return
+     */
     @RequestMapping("/sendMsg")
     public String sendMessage() {
         return messageProvider.send();
