@@ -21,7 +21,7 @@ public class PaymentController {
     @Resource
     private KafkaTemplate<String, String> kafkaTemplate;
 
-    @RequestMapping("/get/{id}")
+    @RequestMapping(value = "/get/{id}")
     public Payment getPayment(@PathVariable("id") Long id) {
         LOGGER.info("=============  访问payment  ============");
         return new Payment(id, "彰显先");
