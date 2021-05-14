@@ -19,7 +19,6 @@
         <module>feign-hystrix-payment-80</module>
         <module>consumer-hystrix-dashboard</module>
         <module>stream-provider8001</module>
-        <module>assembly</module>
     </modules>
 
     <!--统一管理jar包版本-->
