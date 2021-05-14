@@ -20,7 +20,7 @@ import javax.annotation.Resource;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class BaseTest {
 
-    private MockTestBuilder mockTestBuilder;
+    protected MockTestBuilder mockTestBuilder;
 
     @Resource
     private WebApplicationContext webApplicationContext;
