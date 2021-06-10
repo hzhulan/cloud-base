@@ -2,6 +2,8 @@ package com.fh.payment;
 
 import com.alibaba.fastjson.JSONObject;
 import com.fh.common.BaseTest;
+import com.fh.common.MethodType;
+import com.fh.common.ParamsType;
 import com.fh.domain.Payment;
 import org.junit.Assert;
 import org.junit.Test;
@@ -20,7 +22,7 @@ public class TestGet extends BaseTest {
         super.before();
 
         // 如果需要使用非默认参数配置，可以使用build进行修改
-//        mockTestBuilder.build(ParamsType.FORM, MethodType.POST);
+        mockTestBuilder.build(ParamsType.FORM, MethodType.POST);
     }
 
     @Test

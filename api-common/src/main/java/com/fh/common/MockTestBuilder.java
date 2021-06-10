@@ -64,7 +64,14 @@ public class MockTestBuilder {
         }
 
         try {
-            this.mockHttpServletRequestBuilder = MockMvcRequestBuilders.get(url);
+            if (this.methodType == MethodType.GET) {
+                this.mockHttpServletRequestBuilder = MockMvcRequestBuilders.get(url);
+            } else if (this.methodType == MethodType.POST) {
+                this.mockHttpServletRequestBuilder = MockMvcRequestBuilders.post(url);
+            } else {
+                throw new BusinessRuntimeException("方法类型暂不支持，请确认");
+            }
+
             if (params != null) {
                 switch (this.paramsType.getValue()) {
                     case "application/x-www-form-urlencoded":
