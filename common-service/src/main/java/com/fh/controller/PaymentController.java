@@ -4,10 +4,7 @@ import com.fh.domain.Payment;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.concurrent.TimeUnit;
@@ -21,7 +18,7 @@ public class PaymentController {
     @Resource
     private KafkaTemplate<String, String> kafkaTemplate;
 
-    @RequestMapping("/get/{id}")
+    @PostMapping(value = "/get/{id}")
     public Payment getPayment(@PathVariable("id") Long id) {
         LOGGER.info("=============  访问payment  ============");
         return new Payment(id, "彰显先");
@@ -41,4 +38,10 @@ public class PaymentController {
         }
         return "调用慢接口成功";
     }
+
+    @RequestMapping("/zipkin")
+    public String paymentZipkin() {
+        return "this is zipkin";
+    }
+
 }

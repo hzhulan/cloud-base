@@ -13,7 +13,15 @@ spring:
         - id: common-service
           uri: lb://COMMON-SERVICE
           predicates:
-            - Path=/payment/get/**
+            - Path=/common-service/**
+#            - After=2020-03-15T15:35:07.412+08:00[GMT+08:00]
+#            - Cookie=name,zh1991
+            - Header=X-Request-Id, \d+ #请求头要有X-Request-Id属性并且值为整数的正则表达式
+#            - Host=**.atguigu.com
+#            - Method=GET
+#            - Query=username, \d+ #要有参数名username并且值还要啥整数才能路由
+          filters:
+            - StripPrefix=1
 eureka:
   instance:
     instance-id: cloud-gateway-service

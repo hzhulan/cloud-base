@@ -4,17 +4,24 @@ server:
 spring:
   application:
     name: COMMON-SERVICE
-  kafka:
-    bootstrap-server: localhost:9092
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-      retries: 3
-    consumer:
-      group-id: cloud-default
-      enable-auto-commit: true
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  # zipkin/sleuth链路跟踪
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      # 采样值介于0到1之间,1表示全部采集
+      probability: 1
+#  kafka:
+#    bootstrap-server: localhost:9092
+#    producer:
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      retries: 3
+#    consumer:
+#      group-id: cloud-default
+#      enable-auto-commit: true
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource      #当前数据源操作类型
@@ -22,6 +29,8 @@ spring:
     url: jdbc:mysql://localhost:3306/db2019?useUnicode=true&characterEncoding-utr-8&useSSL=false
     username: root
     password: 123456
+
+
 
 eureka:
   client:
